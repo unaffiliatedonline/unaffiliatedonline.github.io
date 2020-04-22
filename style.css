@@ -9,8 +9,12 @@ h1 {
     color: white;
 }
 
+.main {
+    width: 100%;
+}
+
 .center {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 .center-children {
