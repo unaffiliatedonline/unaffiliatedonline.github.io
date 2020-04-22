@@ -10,8 +10,9 @@ h1 {
 }
 
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
+  margin: 0 auto;
+}
+
+.center-children {
+    text-align: center;
+}
