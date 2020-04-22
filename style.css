@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'sarpanchblack';
+    font-family: 'SarpanchBlack';
     src: url('sarpanch-black-webfont.woff2') format('woff2'),
          url('sarpanch-black-webfont.woff') format('woff');
     font-weight: normal;
@@ -8,6 +8,7 @@
 
 body {
     background-color:black;
+    font-family: SarpanchBlack, Verdana, sans-serif;
 }
 
 h1 {
