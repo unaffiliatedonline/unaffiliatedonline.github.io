@@ -1,14 +1,8 @@
-@font-face {
-    font-family: 'SarpanchBlack';
-    src: url('sarpanch-black-webfont.woff2') format('woff2'),
-         url('sarpanch-black-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url(//fonts.googleapis.com/css2?family=Sarpanch:wght@900&display=swap);
 
 body {
     background-color:black;
-    font-family: SarpanchBlack, Verdana, sans-serif;
+    font-family: 'Sarpanch', Verdana, sans-serif;
 }
 
 h1 {
