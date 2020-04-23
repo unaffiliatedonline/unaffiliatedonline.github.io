@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <!--<meta name="description" content="put text here">-->
+        <!--<meta name="keywords" content="" />-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>UNAFFILIATED.FUN TESTBED</title>
+        <link rel="stylesheet" href="w3.css">
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="/assets/favicon.ico" sizes="32x32">
+        <link href="style.css" rel="stylesheet">
+        <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+        <script src="https://unpkg.com/video.js/dist/video.js"></script>
+        <script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
+    </head>
+
+    <body>
+        <video id="videoStream" class="video-js vjs-default-skin" preload="auto" autoplay playsinline="true" muted="true" tabindex="-1">
+            <source src="http://10.10.10.165:8080/live/my-stream-key/index.m3u8" type="application/x-mpegURL"/>
+        </video>
+        <script>
+            var overrideNative=false;
+
+            var player=videojs('videoStream', {
+                html5: {
+                    hls: {
+                        overrideNative: overrideNative
+                    },
+                    nativeVideoTracks: !overrideNative,
+                    nativeAudioTracks: !overrideNative,
+                    nativeTextTracks: !overrideNative
+                }
+            });
+            player.play();
+        </script>
+
+        <img id=banner" src="/assets/banner.png"/>
+
+        <iframe src="https://titanembeds.com/embed/702229027519463494?css=100" height="100%" width="100%" frameborder="0"></iframe>
+
+        <div class="audioContain">
+            <audio id="audioStream" preload="" controls>
+                <source src="http://localhost:18000/unaffiliated.mp3"
+                type="audio/mp3">
+                <source src="http://localhost:18000/unaffiliated.ogg"
+                type="audio/ogg">
+            </audio>
+        </div>
+
+    </body>
+</html>
