@@ -18,9 +18,9 @@
             <source src="http://10.10.10.165:8080/live/my-stream-key/index.m3u8" type="application/x-mpegURL"/>
         </video>
         <script>
-            var overrideNative=false;
+            var overrideNative = false;
 
-            var player=videojs('videoStream', {
+            var player = videojs('videoStream', {
                 html5: {
                     hls: {
                         overrideNative: overrideNative
@@ -33,9 +33,9 @@
             player.play();
         </script>
 
-        <img id=banner" src="/assets/banner.png"/>
+        <img id="banner" src="/assets/banner.png"/>
 
-        <iframe src="https://titanembeds.com/embed/702229027519463494?css=100" height="100%" width="100%" frameborder="0"></iframe>
+        <iframe id="chat" src="https://titanembeds.com/embed/702229027519463494?css=100" height="100%" width="100%" frameborder="0"></iframe>
 
         <div id="audioContain">
             <audio id="audioStream" preload="" controls>
