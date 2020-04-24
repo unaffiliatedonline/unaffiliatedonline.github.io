@@ -15,14 +15,14 @@ html, body {
 
 #bannerContain {
     position: fixed;
-    width: 100%
-    z-index: -1;
+    left: 0; right: 0;
+    text-align: center;
+    z-index: -998;
 }
 
 #banner {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
+    display: inline-block;
+    margin: 0 auto;
     width: 80%;
 }
 
