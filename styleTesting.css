@@ -14,17 +14,17 @@ html, body {
 }
 
 #banner {
+    position: fixed;
     margin: auto;
     width: 80%;
     display: block;
-    z-index: 0;
+    z-index: -1;
 }
 
 .box {
     display: flex;
     flex-flow: column;
     height: 100%;
-    z-index: 1;
 }
   
 .box .row {
