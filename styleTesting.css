@@ -16,6 +16,7 @@ html, body {
 #bannerContain {
     position: fixed;
     width: 100%
+    z-index: -1;
 }
 
 #banner {
@@ -23,7 +24,6 @@ html, body {
     margin-right: auto;
     margin-left: auto;
     width: 80%;
-    z-index: -1;
 }
 
 .box {
