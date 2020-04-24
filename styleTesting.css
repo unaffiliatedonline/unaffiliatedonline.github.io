@@ -17,7 +17,6 @@ html, body {
     position: fixed;
     margin: auto;
     width: 80%;
-    display: block;
     z-index: -1;
 }
 
