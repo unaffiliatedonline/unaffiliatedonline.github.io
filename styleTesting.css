@@ -15,7 +15,9 @@ html, body {
 
 #banner {
     position: fixed;
-    margin: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
     width: 80%;
     z-index: -1;
 }
