@@ -34,19 +34,23 @@
             player.play();
         </script>
 
-        <div>
-            <img id="banner" src="/assets/banner.png"/>
-        </div>
+        <div class="box">
+            <div class="row header">
+                <img id="banner" alt="UNAFFILIATED" src="/assets/banner.png"/>
+            </div>
 
-        <iframe id="chat" src="https://titanembeds.com/embed/702229027519463494?css=100" height="100%" width="100%" frameborder="0"></iframe>
+            <div class="row content">
+                <iframe id="chat" src="https://titanembeds.com/embed/702229027519463494?css=100" height="100%" width="100%" frameborder="0"></iframe>
+            </div>
 
-        <div id="audioContain">
-            <audio id="audioStream" preload="" controls>
-                <source src="http://localhost:18000/unaffiliated.mp3"
-                type="audio/mp3">
-                <source src="http://localhost:18000/unaffiliated.ogg"
-                type="audio/ogg">
-            </audio>
+            <div class="row footer">
+                <audio id="audioStream" preload="" controls>
+                    <source src="http://localhost:18000/unaffiliated.mp3"
+                    type="audio/mp3">
+                    <source src="http://localhost:18000/unaffiliated.ogg"
+                    type="audio/ogg">
+                </audio>
+            </div>
         </div>
 
     </body>
