@@ -37,7 +37,7 @@
             $(function(){
                 $('#button').click(function(){ 
                     if(!$('#iframe').length) {
-                            $('#chatDiv').html('<iframe id="chat" src="https://titanembeds.com/embed/702229027519463494?css=100" height="100%" width="100%" frameborder="0"></iframe>');
+                            $('#chatDiv').html('<iframe src="https://titanembeds.com/embed/702229027519463494?css=100" height="100%" width="100%" frameborder="0"></iframe>');
                     }
                 });   
             });
@@ -45,8 +45,6 @@
         
         <div class="box">
             <div id="chatDiv" class="row content"></div>
-                <!--<iframe></iframe>-->
-            </div>
 
             <div class="row footer">
                 <audio id="audioStream" preload="" controls>
@@ -55,8 +53,8 @@
                     <source src="https://audio.unaffiliated.xyz/unaffiliated.ogg"
                     type="audio/ogg">
                 </audio>
+
                 <button id="button" type="button">Open Chatbox</button>
-                
             </div>
         </div>
 
