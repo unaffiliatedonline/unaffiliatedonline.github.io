@@ -51,12 +51,12 @@ html, body {
 
 button {
   position: relative;
-  background-color: #4CAF50;
+  background-color: rgb(236, 24, 255);
   border: none;
-  font-size: 28px;
+  font-size: 24px;
   color: #FFFFFF;
-  padding: 10px;
-  width: 400px;
+  padding: 5px;
+  width: 200px;
   text-align: center;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
@@ -66,13 +66,12 @@ button {
 }
 
 button:hover {
-  background-color: #4CAF50;
-  color: white;
+  background-color: rgb(215, 22, 233);
 }
 
 button:after {
   content: "";
-  background: #90EE90;
+  background: rgb(160, 17, 173);
   display: block;
   position: absolute;
   padding-top: 300%;
