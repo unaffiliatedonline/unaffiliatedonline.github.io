@@ -41,8 +41,9 @@
 
             <script>
                 $("button").click(function(){
-                    var iframe = $("#chat");
-                    iframe.attr("src", iframe.data("src")); 
+                    $("iframe").each(function(){
+                       $(this).attr("src", $(this).data("src"));
+                   });
                 });
             </script>
 
