@@ -35,13 +35,14 @@
         
         <script type="text/javascript">
             $('#load').click(function() {
-                $('#chat').attr('src', 'https://titanembeds.com/embed/702229027519463494?css=100');
-            });
+                var iframe = document.getElementById("chat");
+                iframe.src = "https://titanembeds.com/embed/702229027519463494?css=100";
+            };
         </script>
         
         <div class="box">
             <div id="chatDiv" class="row content">
-                <iframe id="chat"></iframe>
+                <iframe id="chat" height="100%" width="100%" frameborder="0"></iframe>
             </div>
 
             <div class="row footer">
