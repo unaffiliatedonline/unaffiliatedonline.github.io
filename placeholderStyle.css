@@ -4,8 +4,35 @@
 	margin: 0;
 	padding: 0;
 	font-family: 'Sarpanch', Verdana, sans-serif;
-	background-color:black;
 	color: white;
+}
+
+body {
+  height: 100%;
+}
+
+.no-webp body { 
+  background: url("bg.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.webp body { 
+  background: url("bg.webp") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.no-js body {
+  background: url("bg.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .imgbox {
