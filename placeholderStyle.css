@@ -1,0 +1,28 @@
+@import url(//fonts.googleapis.com/css2?family=Sarpanch:wght@900&display=swap);
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Sarpanch', Verdana, sans-serif;
+	background-color:black;
+	color: white;
+}
+
+.imgbox {
+	display: grid;
+	height: 100%;
+}
+.center-fit {
+	max-width: 100%;
+	max-height: 100vh;
+	margin: auto;
+}
+
+.center {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.center-children {
+    text-align: center;
+}
