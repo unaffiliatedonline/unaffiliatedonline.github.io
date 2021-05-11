@@ -14,9 +14,11 @@
     </head>
 
     <body>
-        <video id="videoStream" class="video-js vjs-default-skin" preload="auto" autoplay playsinline="true" muted="true" tabindex="-1">
-            <source src="https://video.swagzone.win/hls/stream/index.m3u8" type="application/x-mpegURL"/>
-        </video>
+        <div id="videoBox">
+            <video id="videoStream" class="video-js vjs-default-skin" preload="auto" autoplay playsinline="true" muted="true" tabindex="-1">
+                <source src="https://video.swagzone.win/hls/stream/index.m3u8" type="application/x-mpegURL"/>
+            </video>
+        </div>
         <script type="text/javascript">
             var overrideNative = true;
 
