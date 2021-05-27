@@ -15,6 +15,23 @@ body {
   background-color: black;
 }
 
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  float: left;
+  margin-left: 3%;
+  margin-top: 7%;
+  width: 60%;
+    min-width:320px;
+  height: 750px;
+  border: 1px dashed rgb(255, 0, 0);
+  overflow-y: scroll;
+}
+
 /*
 .no-webp body { 
   background: url("/assets/bg.jpg") no-repeat center center fixed; 
