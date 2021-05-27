@@ -22,12 +22,10 @@ body {
 }
 
 .main {
-  float: left;
-  margin-left: 3%;
-  margin-top: 7%;
   width: 60%;
-    min-width:320px;
-  height: 750px;
+    min-width:200px;
+  height: 20%;
+    max-height:550px;
   border: 1px dashed rgb(255, 0, 0);
   overflow-y: scroll;
 }
