@@ -61,6 +61,7 @@ body {
 .imgbox {
 	display: grid;
 	height: 100%;
+  z-index: -999;
 }
 .center-fit {
 	max-width: 100%;
