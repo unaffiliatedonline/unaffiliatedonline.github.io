@@ -1,1 +1,32 @@
-<!DOCTYPE html><html lang="en"> <head> <meta charset="utf-8"/> <meta name="description" content="SOMETHIN FUNKY TO LISTEN TO"> <meta name="keywords" content="internet radio, concert, gabber, hardcore, juke, nightcore, ambient, dance, bass, dnb"/> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>UNAFFILIATED.FUN</title> <link href="/assets/favicon.ico" rel="icon" sizes="32x32"> <link href="style.min.css" rel="stylesheet"/> <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet"> <script src="https://unpkg.com/video.js/dist/video.min.js"></script> <script src="jquery-3.5.1.slim.min.js"></script> </head> <body> <video id="videoStream" class="video-js vjs-tech" preload="auto" autoplay playsinline="true" muted="true" tabindex="-1"> <source src="https://video.swagzone.win/hls/stream/index.m3u8" type="application/x-mpegURL"/> </video> <script type="text/javascript">var overrideNative=true; var player=videojs('videoStream',{html5:{vhs:{overrideNative: overrideNative}, nativeVideoTracks: !overrideNative, nativeAudioTracks: !overrideNative, nativeTextTracks: !overrideNative}}); player.play(); </script> <div class="box"> <div id="chatDiv" class="row content"> <iframe id="chat" height="100%" width="100%" frameborder="0"></iframe> </div><div class="row footer"> <audio id="audioStream" preload="" controls> <source src="https://audio.swagzone.win/unaffiliated.mp3" type="audio/mp3"> <source src="https://audio.swagzone.win/unaffiliated.ogg" type="audio/ogg"> </audio> <button id="load" type="button">Open Chatbox</button> </div></div><script type="text/javascript">$(document).ready(function (){$('#load').click(function(){$('#chat').attr('src', 'https://titanembeds.com/embed/702229027519463494?defaultchannel=702229027519463498&css=100');});}); </script> </body></html>
+<!DOCTYPE html>
+<html lang="en" class="nojs">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="SOMETHIN FUNKY TO LISTEN TO">
+        <meta name="keywords" content="internet radio, concert, gabber, hardcore, juke, nightcore, ambient, dance, bass, dnb" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>UNAFFILIATED.FUN</title>
+        <link href="/assets/favicon.ico" rel="icon" sizes="32x32">
+        <link href="placeholderStyle.css" rel="stylesheet" />
+		<script src="modernizr-custom.js"></script>
+    </head>
+
+    <body>
+		<!--<script>
+		document.documentElement.classList.remove("no-js");
+		</script>-->
+		
+		<div class="imgbox">
+			<picture class="center-fit">
+				<!--<source type="image/webp" srcset="/assets/banner.webp">-->
+				<source type="image/png" srcset="/assets/ua3splash.png">
+				<img class="center-fit" src="/assets/ua3splash.png" alt="A picture of UNAFFILIATED 3's mascot, drawn by @_hightro on Twitter. It is faded and staring directly at the viewer. It has a jagged smile and sharp sharp eyes, with an intimidating look. Above it is metal-style text that reads 'UNAFFILIATED3'. Above that text is a date which reads 2021-05-22.">
+			</picture>
+		</div>
+
+    <iframe style="border: 0; width: 200px; height: 200px;" src="https://bandcamp.com/EmbeddedPlayer/album=1318410102/size=large/bgcol=333333/linkcol=e32c14/minimal=true/transparent=true/" seamless><a href="https://unaffiliatedfun.bandcamp.com/album/unaffiliated3-20210522">UNAFFILIATED3 - [ 2021.05.22 ] by UNAFFILIATED</a></iframe>    
+    <iframe style="border: 0; width: 200px; height: 200px;" src="https://bandcamp.com/EmbeddedPlayer/album=2864050540/size=large/bgcol=333333/linkcol=fe7eaf/minimal=true/transparent=true/" seamless><a href="https://unaffiliatedfun.bandcamp.com/album/unaffiliated2-20201024">UNAFFILIATED2 - [ 2020.10.24 ] by UNAFFILIATED</a></iframe>
+    <iframe style="border: 0; width: 200px; height: 200px;" src="https://bandcamp.com/EmbeddedPlayer/album=3367105500/size=large/bgcol=ffffff/linkcol=333333/minimal=true/transparent=true/" seamless><a href="https://unaffiliatedfun.bandcamp.com/album/unaffiliated1-20200520">UNAFFILIATED1 - [ 2020.05.20 ] by UNAFFILIATED</a></iframe>
+
+    </body>
+</html>
