@@ -9,6 +9,9 @@
 
 body {
   height: 100%;
+  background-image: url(/assets/ua3splash.png);
+  background-repeat:no-repeat;
+  background-position: center center;
 }
 
 body { 
@@ -16,21 +19,13 @@ body {
 }
 
 .container {
-  /*position: relative;*/
-  height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .main {
-  width: 60%;
-    min-width:200px;
-  height: 20%;
-    max-height:550px;
   border: 1px dashed rgb(255, 0, 0);
-  overflow-y: scroll;
 }
 
 /*
@@ -58,23 +53,3 @@ body {
   background-size: cover;
 }
 */
-
-.imgbox {
-	display: grid;
-	height: 100%;
-  z-index: -999;
-}
-.center-fit {
-	max-width: 100%;
-	max-height: 100vh;
-	margin: auto;
-}
-
-.center {
-    width: 75%;
-    margin: 0 auto;
-}
-
-.center-children {
-    text-align: center;
-}
