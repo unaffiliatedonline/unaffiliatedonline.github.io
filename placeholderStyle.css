@@ -17,6 +17,11 @@ html {
   background-repeat: no-repeat;
 }
 
+iframe {
+  display:block;
+  width:100%;
+}
+
 /*body {
   height: 100%;
   width: 100%;
