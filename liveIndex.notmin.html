@@ -67,13 +67,13 @@
                     if (vShow.style.visibility === 'hidden') {
                         vShow.style.visibility = 'visible';
                         vShow.setAttribute('src', 'https://video.swagzone.win/hls/stream/index.m3u8');
-                        vShow.load();
-                        vShow.play();
+                        player.load();
+                        player.play();
                     } else {
                         vShow.style.visibility = 'hidden';
                         vShow.pause();
                         vShow.removeAttribute('src');
-                        vShow.load();
+                        player.load();
                     }
                 });
             });
