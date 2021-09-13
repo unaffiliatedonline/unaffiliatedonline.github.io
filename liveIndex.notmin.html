@@ -60,15 +60,11 @@
                 });
             });
 
-            var videoStreamShowButton = document.getElementById('hideVideo')
-
-            videoStreamShowButton.onclick = function() {
-                if (player.style.display === "none") {
-                    player.style.display = "block";
-                } else {
-                    player.style.display = "none";
-                }
-            } 
+            $(document).ready(function () {
+                $('#hideVideo').click(function () {
+                    document.getElementById("videoStream").style.display = "none";
+                });
+            });
         </script>
 
 
