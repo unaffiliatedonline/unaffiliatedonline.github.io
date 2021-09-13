@@ -62,12 +62,12 @@
 
             $(document).ready(function () {
                 $('#hideVideo').click(function () {
-                    var vShow = document.getElementById("videoStream")
+                    var vShow = document.getElementById('videoStream')
                     
-                    if (vShow.style.visibility === 'visible') {
-                        vShow.style.display = "hidden";
-                    } else {
+                    if (vShow.style.visibility === 'hidden') {
                         vShow.style.visibility = 'visible';
+                    } else {
+                        vShow.style.visibility = 'hidden';
                     }
                 });
             });
