@@ -48,7 +48,7 @@
                 </audio>
 
                 <button id="load" type="button">Open Chatbox</button>
-                <button id="hideVideo" type="button" onclick="videoStreamShow">Hide/Show Video</button>
+                <button id="hideVideo" type="button">Hide/Show Video</button>
                 <button id="fullViewVideo" type="button">Full-View Video</button>
             </div>
         </div>
@@ -60,12 +60,13 @@
                 });
             });
 
-            function videoStreamShow() {
-                var videoStream = document.getElementById("videoStream");
-                if (videoStream.style.display === "none") {
-                    videoStream.style.display = "block";
+            var videoStreamShowButton = document.getElementById('hideVideo')
+
+            videoStreamShowButton.onclick = function() {
+                if (player.style.display === "none") {
+                    player.style.display = "block";
                 } else {
-                    videoStream.style.display = "none";
+                    player.style.display = "none";
                 }
             } 
         </script>
