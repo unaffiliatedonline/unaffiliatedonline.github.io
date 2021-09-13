@@ -67,14 +67,14 @@
                     
                     if (vShow.style.visibility === 'hidden') {
                         vShow.style.visibility = 'visible';
-                        Player.src({type: 'application/x-mpegURL', src: 'https://video.swagzone.win/hls/stream/index.m3u8'});
+                        player.src({type: 'application/x-mpegURL', src: 'https://video.swagzone.win/hls/stream/index.m3u8'});
                         /*vShowSrc.setAttribute('src', 'https://video.swagzone.win/hls/stream/index.m3u8');*/
                         player.load();
                         player.play();
                     } else {
                         vShow.style.visibility = 'hidden';
                         player.pause();
-                        Player.src({type: 'application/x-mpegURL', src: ''});
+                        player.src({type: 'application/x-mpegURL', src: ''});
                         /*vShowSrc.removeAttribute('src');*/
                         player.load();
                     }
