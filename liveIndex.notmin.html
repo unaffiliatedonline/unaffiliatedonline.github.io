@@ -66,8 +66,10 @@
                     
                     if (vShow.style.visibility === 'hidden') {
                         vShow.style.visibility = 'visible';
+                        player.pause();
                     } else {
                         vShow.style.visibility = 'hidden';
+                        player.play();
                     }
                 });
             });
