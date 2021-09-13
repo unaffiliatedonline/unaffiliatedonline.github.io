@@ -59,6 +59,18 @@
                     $('#chat').attr('src', 'https://titanembeds.com/embed/702229027519463494?defaultchannel=702229027519463498&css=100');
                 });
             });
+
+            $(document).ready(function () {
+                $('#hideVideo').click(function() {
+                    document.getElementById("videoStream").style.display="none";
+                });
+            });
+
+            $(document).ready(function () {
+                $('.vjs-tech').click(function() {
+                    document.getElementByClass(".vjs-tech").style.object-fit="fill";
+                });
+            });
         </script>
 
 
