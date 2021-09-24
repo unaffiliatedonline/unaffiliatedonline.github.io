@@ -8,6 +8,7 @@
 html {
   background-image: url("/assets/ua4splash.png");
   background-color: black;
+  background-position: center; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
