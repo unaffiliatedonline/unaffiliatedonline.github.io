@@ -1,8 +1,6 @@
 @import url(//fonts.googleapis.com/css2?family=Sarpanch:wght@900&display=swap);
 
 * {
-	/*margin: 0;
-	padding: 0;*/
 	font-family: 'Sarpanch', Verdana, sans-serif;
 	color: white;
 }
@@ -17,15 +15,25 @@ html {
   background-repeat: no-repeat;
 }
 
+div {
+  width: 500px;
+  height: 500px;
+  background-color: red;
+  
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  margin: auto;
+}
+
+/*
 iframe {
   display:block;
   width:100%;
 }
-
-/*body {
-  height: 100%;
-  width: 100%;
-}*/
 
 #container {
   min-height: 100vh;
@@ -35,47 +43,4 @@ iframe {
   align-items: center;
   background-color: lightpink;
 }
-
-/*
-.no-webp body { 
-  background: url("/assets/bg.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-.webp body { 
-  background: url("/assets/bg.webp") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-.no-js body {
-  background: url("/assets/bg.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 */
-
-/*.imgbox {
-	display: grid;
-	height: 100%;
-  z-index: -999;
-}
-.center-fit {
-	max-width: 100%;
-	max-height: 100vh;
-	margin: auto;
-}
-
-.center {
-    width: 75%;
-    margin: 0 auto;
-}
-
-.center-children {
-    text-align: center;
-}*/
