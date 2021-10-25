@@ -6,7 +6,7 @@
 }
 
 html {
-  background-image: url("/assets/ua4splash.png");
+  background-image: url("/assets/ua4splashpostshow.png");
   background-color: black;
   background-position: center; 
   -webkit-background-size: cover;
@@ -22,8 +22,8 @@ body {
 }
 
 div {
-  width: 950px;
-  height: 300px;
+  width: 650px;
+  height: 650px;
   
   position: absolute;
   top:0;
