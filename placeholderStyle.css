@@ -23,8 +23,8 @@ body {
 }
 
 div {
-  width: 650px;
-  height: 650px;
+  height: 60vh;
+  width: 70vw;
   
   position: absolute;
   top:0;
