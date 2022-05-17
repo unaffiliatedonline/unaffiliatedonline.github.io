@@ -23,7 +23,7 @@ body {
   width: 100vw;
 }
 
-div {
+/*div {
   height: 60vh;
   width: 90vw;
   
@@ -34,7 +34,7 @@ div {
   right: 0;
   
   margin: auto;
-}
+}*/
 
 .mainContainer {
   display: flex;
@@ -44,15 +44,17 @@ div {
 }
 
 .main {
-  float: left;
-  margin-left: 3%;
-  margin-top: 7%;
-  width: 70%;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  margin: auto;
+
+  width: 90vw;
     min-width:320px;
-  height: 750px;
-  border: 1px dashed #f0c;
-  background-image: url('/pics/black.png');
-  overflow-y: scroll;
+  height: 100vh;
 }
 
 .center {
