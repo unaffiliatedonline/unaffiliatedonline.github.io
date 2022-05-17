@@ -33,14 +33,14 @@ body {
   overflow: auto;
 }
 
-@media screen and (max-width: 1320px) {
-  .container {
-    width: 60vw;
-  }
-}
-
 @media screen and (max-width: 760px) {
   .container {
     width: 97vw;
+  }
+}
+
+@media screen and (min-width: 1320px) {
+  .container {
+    width: 60vw;
   }
 }
