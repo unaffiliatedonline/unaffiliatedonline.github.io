@@ -21,7 +21,14 @@ html {
 body {
   height: 100vh;
   margin: 0;
-	display: flex;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
 	align-items: center;
   justify-content: center;
 }
@@ -33,14 +40,36 @@ body {
   overflow: auto;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (min-width: 1279px) {
   .container {
-    width: 97vw;
+    width: 99vw;
   }
 }
 
-@media screen and (min-width: 1320px) {
+@media screen and (max-width: 1279px) {
   .container {
-    width: 60vw;
+    max-width: 60vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 80vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 90vw;
+  }
+}
+
+@media screen and (max-width: 672px) {
+  .html {
+    height: 100%;
+  }
+  .main {
+    flex-wrap: wrap;
+    overflow-y: scroll;
   }
 }
