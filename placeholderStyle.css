@@ -36,6 +36,31 @@ div {
   margin: auto;
 }
 
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  float: left;
+  margin-left: 3%;
+  margin-top: 7%;
+  width: 70%;
+    min-width:320px;
+  height: 750px;
+  border: 1px dashed #f0c;
+  background-image: url('/pics/black.png');
+  overflow-y: scroll;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 /*
 iframe {
   display:block;
