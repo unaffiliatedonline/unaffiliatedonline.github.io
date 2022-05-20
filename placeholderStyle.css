@@ -56,6 +56,16 @@ body {
   }
 }
 
+@media screen and (max-height: 672px) {
+  .html {
+    height: 100%;
+  }
+  .main {
+    flex-wrap: wrap;
+    overflow-y: scroll;
+  }
+}
+
 @media screen and (max-width: 1279px) {
   .container {
     max-width: 60vw;
