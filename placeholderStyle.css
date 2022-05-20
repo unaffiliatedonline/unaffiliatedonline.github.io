@@ -40,7 +40,7 @@ body {
   overflow: auto;
 }
 
-@media screen and (max-height: 672px) {
+@media screen and (max-height: 672px) and (min-width: 1279px) {
   .html {
     height: 100%;
   }
