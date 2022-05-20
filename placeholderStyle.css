@@ -40,6 +40,16 @@ body {
   overflow: auto;
 }
 
+@media screen and (max-height: 672) {
+  .html {
+    height: 100%;
+  }
+  .main {
+    flex-wrap: wrap;
+    overflow-y: scroll;
+  }
+}
+
 @media screen and (min-width: 1279px) {
   .container {
     width: 99vw;
@@ -61,16 +71,6 @@ body {
 @media screen and (max-width: 768px) {
   .container {
     max-width: 90vw;
-  }
-}
-
-@media screen and (max-height: 672) {
-  .html {
-    height: 100%;
-  }
-  .main {
-    flex-wrap: wrap;
-    overflow-y: scroll;
   }
 }
 
