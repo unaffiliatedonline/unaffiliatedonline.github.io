@@ -52,7 +52,7 @@ body {
   }
 }
 
-@media screen and (max-height: 676px) {
+@media screen and (max-height: 643px) {
   .html {
     height: 100%;
   }
