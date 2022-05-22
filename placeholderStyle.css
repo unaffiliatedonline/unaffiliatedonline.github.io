@@ -62,24 +62,18 @@ body {
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .container {
-    max-width: 80vw;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    max-width: 90vw;
-  }
-}
-
-@media screen and (max-width: 672px) {
+@media screen and (max-width: 674px) {
   .html {
     height: 100%;
   }
   .main {
     flex-wrap: wrap;
     overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 674px) {
+  .container {
+    max-width: 99vw;
   }
 }
