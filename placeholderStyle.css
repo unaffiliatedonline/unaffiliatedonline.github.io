@@ -52,6 +52,12 @@ body {
   }
 }
 
+@media screen and (max-width: 1347) {
+  .container {
+    width: 80vw;
+  }
+}
+
 @media screen and (max-width: 1071px) {
   .html {
     height: 100%;
