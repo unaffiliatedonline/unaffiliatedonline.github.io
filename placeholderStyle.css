@@ -40,29 +40,19 @@ body {
   overflow: auto;
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1072px) {
   .container {
-    width: 99vw;
+    width: 85vw;
   }
 }
 
-@media screen and (max-width: 1279px) {
-  .container {
-    max-width: 60vw;
-  }
-}
-
-@media screen and (max-height: 643px) {
+@media screen and (max-width: 1071px) {
   .html {
     height: 100%;
   }
-  .main {
-    flex-wrap: wrap;
-    overflow-y: scroll;
-  }
 }
 
-@media screen and (max-width: 674px) {
+@media screen and (max-height: 642px) {
   .html {
     height: 100%;
   }
