@@ -40,21 +40,21 @@ body {
   overflow: auto;
 }
 
-@media screen and (min-width: 1786) {
+@media screen and (min-width: 1733px) {
   .container {
     width: 99vw;
   }
 }
 
-@media screen and (max-width: 1785) {
+@media screen and (max-width: 1732px) {
   .container {
-    width: 40vw;
+    width: 70vw;
   }
 }
 
-@media screen and (max-width: 1347) {
+@media screen and (max-width: 1347px) {
   .container {
-    width: 80vw;
+    width: 85vw;
   }
 }
 
