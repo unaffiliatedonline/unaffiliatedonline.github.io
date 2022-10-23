@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "videojs-hls-quality-selector": "^1.1.4",
+    "videojs-http-source-selector": "^1.1.6"
+  }
+}
