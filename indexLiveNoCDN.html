@@ -24,9 +24,6 @@
     <body>
 
         <video id="videoStream" class="video-js vjs-tech" controls preload="auto" autoplay muted="true">
-            <!--<source id="videoStreamSrc" src="https://cdn.video.swagzone.win/hls/stream/index.m3u8" type="application/x-mpegURL"/>-->
-            <!--non-cdn for testing-->
-            <!--<source id="videoStreamSrc" src="https://video.swagzone.win/hls/stream.m3u8" type="application/x-mpegURL"/>-->
         </video>
         <script type="text/javascript">
             var overrideNative = true;
@@ -55,6 +52,7 @@
 
 			player.src({
 				src: 'https://video.swagzone.win/hls/stream.m3u8',
+                //src: 'https://cdn.video.swagzone.win/hls/stream/index.m3u8',
 				type: 'application/x-mpegURL'
 			});
 
@@ -68,12 +66,10 @@
 
             <div id="buttonBar" class="row footer">
                 <audio id="audioStream" preload="" controls>
-					<!--
 					<source src="https://audio.swagzone.win/unaffiliated.mp3"
                     type="audio/mp3">
                     <source src="https://audio.swagzone.win/unaffiliated.ogg"
                     type="audio/ogg">
-					-->
 				</audio>
 
                 <button id="mute" type="button">Unmute</button>
@@ -144,7 +140,8 @@
                         btnHideVideo.innerHTML = "Hide Video";
                         audio.style.display = 'none';
                         vShow.style.display = 'initial';
-                        player.src({type: 'application/x-mpegURL', src: 'https://cdn.video.swagzone.win/hls/stream/index.m3u8'});
+                        player.src({type: 'application/x-mpegURL', src: 'https://video.swagzone.win/hls/stream.m3u8'});
+                        //player.src({type: 'application/x-mpegURL', src: 'https://cdn.video.swagzone.win/hls/stream/index.m3u8'});
                         //vShowSrc.setAttribute('src', 'https://video.swagzone.win/hls/stream/index.m3u8');
                         player.load();
                         player.play();
