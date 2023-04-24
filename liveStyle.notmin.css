@@ -27,6 +27,13 @@ html, body {
   background-color: rgb(164, 0, 179);
 }
 
+#showButtons {
+  background-color: rgb(164, 0, 179);
+  border-radius: 100%;
+  width: 40px;
+  display: none;
+}
+
 #videoStream {
     width: 100vw;
     height: 100vh;

@@ -6,18 +6,21 @@
         <meta name="keywords" content="internet radio, concert, gabber, hardcore, juke, nightcore, ambient, dance, bass, dnb" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>UNAFFILIATED.FUN</title>
+        <!--css and favicon for UA-->
         <link href="/assets/favicon.ico" rel="icon" sizes="32x32">
         <link href="liveStyle.notmin.css" rel="stylesheet" />
+        <!--css and js for videojs-->
         <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
         <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+        <!--js for jquery-->
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"
 			  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
 			  crossorigin="anonymous">
 		</script>
 
-        <!-- testing quality selector for videojs -->
-        <!--<script src="/scripts/videojs-contrib-quality-levels.min.js"></script>-->
+        <!--js for videojs quality selector-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-quality-levels/4.0.0/videojs-contrib-quality-levels.min.js"></script>
+        <!--css and js for videojs source selector-->
         <script src="/scripts/videojs-http-source-selector.min.js"></script>
         <link href="/scripts/videojs-http-source-selector.css" rel="stylesheet">
     </head>
@@ -50,14 +53,20 @@
             // testing quality selector for videojs
             player.qualityLevels();
             player.httpSourceSelector();
+            //player.reloadSourceOnError();
 
-			player.src({
+			player.src([{
 				//src: 'https://video.swagzone.win/hls/stream.m3u8',
-                src: 'https://cdn.video.swagzone.win/hls/stream/index.m3u8',
+                src: 'https://cdn.video.swagzone.win/hls/stream.m3u8',
 				type: 'application/x-mpegURL'
-			});
+			},
+            {
+                src: '/assets/streamoffline.mp4',
+				type: 'video/mp4'
+            }]);
 
             player.play();
+
         </script>
         
         <div class="box">
@@ -78,6 +87,7 @@
                 <button id="fullViewVideo" type="button">Full Video</button>
                 <a href="https://discord.com/invite/pmbPxxeujy" target="_blank"><button id="discord" type="button">Discord Server</button></a>
                 <button id="hideButtons" type="button">Hide Buttons</button>
+                <button id="showButtons" type="button">+</button>
             </div>
         </div>
 
@@ -195,6 +205,7 @@
                 }),
 
                 $('#hideButtons').click(function () {
+                    var btnShow = document.getElementById('showButtons');
                     var btnHide = document.getElementById('hideButtons');
                     var btnMute = document.getElementById('mute');
                     var btnHideVideo = document.getElementById('hideVideo');
@@ -205,14 +216,45 @@
 
                     // hide all buttons except button hide button
                     if (buttonsHidden === true) {
-                        btnHide.innerHTML = "Show Buttons";
+                        btnShow.style.display = 'inline';
+                        btnHide.style.display = 'none';
                         btnDiscord.style.display = 'none';
                         btnMute.style.display = 'none';
                         btnHideVideo.style.display = 'none';
                         btnFullViewVideo.style.display = 'none';
                     // show all buttons
                     } else {
-                        btnHide.innerHTML = "Hide Buttons";
+                        btnShow.style.display = 'none';
+                        btnHide.style.display = 'inline';
+                        btnDiscord.style.display = 'inline';
+                        btnMute.style.display = 'inline';
+                        btnHideVideo.style.display = 'inline';
+                        btnFullViewVideo.style.display = 'inline';
+                    }
+                }),
+
+                $('#showButtons').click(function () {
+                    var btnShow = document.getElementById('showButtons');
+                    var btnHide = document.getElementById('hideButtons');
+                    var btnMute = document.getElementById('mute');
+                    var btnHideVideo = document.getElementById('hideVideo');
+                    var btnFullViewVideo = document.getElementById('fullViewVideo');
+                    var btnDiscord = document.getElementById('discord');
+
+                    buttonsHidden = !buttonsHidden;
+
+                    // hide all buttons except button hide button
+                    if (buttonsHidden === true) {
+                        btnShow.style.display = 'inline';
+                        btnHide.style.display = 'none';
+                        btnDiscord.style.display = 'none';
+                        btnMute.style.display = 'none';
+                        btnHideVideo.style.display = 'none';
+                        btnFullViewVideo.style.display = 'none';
+                    // show all buttons
+                    } else {
+                        btnShow.style.display = 'none';
+                        btnHide.style.display = 'inline';
                         btnDiscord.style.display = 'inline';
                         btnMute.style.display = 'inline';
                         btnHideVideo.style.display = 'inline';
