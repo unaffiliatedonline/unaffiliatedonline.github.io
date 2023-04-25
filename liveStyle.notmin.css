@@ -37,6 +37,7 @@ html, body {
 #videoStream {
     width: 100vw;
     height: 100vh;
+    height: -webkit-fill-available;
     position: fixed;
     top: 0;
     left: 0;
@@ -111,7 +112,7 @@ button:active:after {
   transition: 0s
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 540px) {
   button {
     width: 100vw;
   }
