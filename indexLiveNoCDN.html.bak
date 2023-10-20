@@ -178,8 +178,8 @@
                         audio.style.display = 'block';
                         player.pause();
                         player.src({type: 'application/x-mpegURL', src: ''});
-                        /*vShowSrc.removeAttribute('src');*/
-                        player.load();
+
+                        // player.load();
                     }
 
                     if (audio.paused && videoMuted === false) {
