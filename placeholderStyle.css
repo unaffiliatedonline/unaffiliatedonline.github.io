@@ -6,7 +6,7 @@
 }
 
 html {
-  background-image: url("/assets/ua8_siteBgBlur.png");
+  background-image: url("/assets/uaix_siteBgBlur.png");
   background-color: black;
   background-position: center; 
   -webkit-background-size: cover;
@@ -40,50 +40,19 @@ body {
   overflow: auto;
 }
 
-@media screen and (min-width: 2200px) {
+@media screen and (min-width: 1126px) {
   .container {
-    width: 99vw;
+    width: 900px;
   }
 }
 
-@media screen and (max-width: 2199px) {
+@media screen and (max-width: 1125px) {
   .container {
-    width: 75vw;
+    width: 90vw;
   }
 }
 
-@media screen and (max-width: 1617px) {
-  .container {
-    width: 85vw;
-  }
-}
-
-@media screen and (max-width: 1427px) {
-  .container {
-    width: 99vw;
-  }
-}
-
-@media screen and (max-width: 1230px) {
-  .container {
-    width: 70vw;
-  }
-  .html {
-    height: 100%;
-  }
-  .main {
-    flex-wrap: wrap;
-    overflow-y: scroll;
-  }
-}
-
-@media screen and (max-width: 863px) {
-  .container {
-    width: 99vw;
-  }
-}
-
-@media screen and (max-height: 643px) {
+@media screen and (max-height: 893px) {
   .html {
     height: 100%;
   }
