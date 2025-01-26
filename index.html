@@ -58,12 +58,7 @@
             //player.reloadSourceOnError();
 
 			player.src([{
-				//src: 'https://video.swagzone.win/hls/stream.m3u8',
-                src: 'https://cdn.video.swagzone.win/hls/stream.m3u8',
-				type: 'application/x-mpegURL'
-			},
-            {
-                src: '/assets/streamOfflineUAX.mp4',
+                src: '/assets/streamOffline.mp4',
 				type: 'video/mp4'
             }]);
 
@@ -155,12 +150,7 @@
                         audio.style.display = 'none';
                         vShow.style.display = 'initial';
                         player.src([{
-                            //src: 'https://video.swagzone.win/hls/stream.m3u8',
-                            src: 'https://cdn.video.swagzone.win/hls/stream.m3u8',
-                            type: 'application/x-mpegURL'
-                        },
-                        {
-                            src: '/assets/streamOfflineUAX.mp4',
+                            src: '/assets/streamOffline.mp4',
                             type: 'video/mp4'
                         }]);
                         player.load();
