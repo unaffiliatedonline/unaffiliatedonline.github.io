@@ -1,275 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="nojs">
     <head>
         <meta charset="utf-8" />
-        <meta name="description" content="JOLLY UNAFFILIATED.FUN">
+        <meta name="description" content="SOMETHIN' FUNKY TO LISTEN TO!!">
         <meta name="keywords" content="internet radio, concert, gabber, hardcore, juke, nightcore, ambient, dance, bass, dnb" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>UNAFFILIATED.FUN</title>
-        <!--css and favicon for UA-->
         <link href="/assets/favicon.ico" rel="icon" sizes="32x32">
-        <link href="liveStyle.notmin.css" rel="stylesheet" />
-        <!--css and js for videojs-->
-        <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
-        <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
-        <!--js for jquery-->
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-			  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-			  crossorigin="anonymous">
-		</script>
-
-        <!--js for videojs quality selector-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-quality-levels/4.0.0/videojs-contrib-quality-levels.min.js"></script>
-        <!--css and js for videojs source selector-->
-        <script src="/scripts/videojs-http-source-selector.min.js"></script>
-        <link href="/scripts/videojs-http-source-selector.css" rel="stylesheet">
-    
+        <link href="placeholderStyle.css" rel="stylesheet" />
+		<script src="modernizr-custom.js"></script>
     </head>
 
     <body>
-
-        <video id="videoStream" class="video-js vjs-tech vjs-show-big-play-button-on-pause" controls preload="auto" autoplay loop muted="true">
-        </video>
-        <script type="text/javascript">
-            var overrideNative = true;
-
-            var player = videojs('videoStream', {
-                liveui: true,
-                html5: {
-                    vhs: {
-                        overrideNative: overrideNative
-                    },
-                    nativeVideoTracks: !overrideNative,
-                    nativeAudioTracks: !overrideNative,
-                    nativeTextTracks: !overrideNative,
-                    
-                    plugins: {
-                        httpSourceSelector:
-                            {
-                                default: 'auto'
-                            }
-                    }
-                }
-            });
-
-            // testing quality selector for videojs
-            player.qualityLevels();
-            player.httpSourceSelector();
-            //player.reloadSourceOnError();
-
-			player.src([{
-                src: '/assets/streamOffline.mp4',
-				type: 'video/mp4'
-            }]);
-
-            player.play();
-
-        </script>
-        
-        <div class="box">
-            <div id="chatDiv" class="row content">
-                <iframe id="chat" height="100%" width="100%" frameborder="0"></iframe>
-            </div>
-
-            <div id="buttonBar" class="row footer">
-                <audio id="audioStream" preload="" controls>
-					<source src="https://audio.swagzone.win/unaffiliated.mp3"
-                    type="audio/mp3">
-                    <source src="https://audio.swagzone.win/unaffiliated.ogg"
-                    type="audio/ogg">
-				</audio>
-
-                <button id="mute" type="button">Unmute</button>
-                <button id="hideVideo" type="button">Hide Video</button>
-                <button id="fullViewVideo" type="button">Full Video</button>
-                <a href="https://discord.com/invite/pmbPxxeujy" target="_blank"><button id="discord" type="button">Discord Server</button></a>
-                <a href="https://unaffiliated.fun/indexPastShows.html" target="_blank"><button id="pastShows" type="button">Past Shows</button></a>
-                <button id="hideButtons" type="button">Hide Buttons</button>
-                <button id="showButtons" type="button">+</button>
-            </div>
-        </div>
-
-        <script type="text/javascript">
-            // define global for hidden video
-            let videoIsHidden = false;
-            // define global for button hide
-            let buttonsHidden = false;
-            // define global for if video is muted
-            let videoMuted = true;
-            // define global for video objectfit
-            let videoIsFullView = true;
-            
-            $(document).ready(function () {
-                // mute function
-                $('#mute').click(function () {
-                    // invert mute global variable
-                    videoMuted = !videoMuted;
-                    var btnMute = document.getElementById('mute');
-                    
-                    // if video isn't hidden, act on video
-                    if (videoIsHidden === false){
-                        var vp = videojs('videoStream').player();
-                        var muted = vp.muted();
-
-                        vp.muted(videoMuted);
-                    // else, act on audio player
-                    } else {
-                        var audio = document.getElementById('audioStream');
-                        if (audio.paused){
-                            audio.play();
-                        } else {
-                            audio.pause();
-                        }
-                    }
-
-                    if (videoMuted === true) {
-                        btnMute.innerHTML = "Unmute";
-                        btnMute.style.backgroundColor = 'rgb(242, 3, 48)';
-                    }
-                    else {
-                        btnMute.innerHTML = "Mute";
-                        btnMute.style.backgroundColor = 'rgb(236, 24, 255)';
-                    }
-                }),
-
-                $('#hideVideo').click(function () {
-                    var vShow = document.getElementById('videoStream');
-                    var vShowSrc = document.getElementById('videoStreamSrc');
-
-                    var audio = document.getElementById('audioStream');
-
-                    var btnHideVideo = document.getElementById('hideVideo');
-
-                    videoIsHidden = !videoIsHidden;
-
-                    // on buttonpress, if video is hidden set it to be shown
-                    // also hide audio player
-                    if (videoIsHidden === false) {
-                        document.body.style.backgroundColor = "";
-                        btnHideVideo.innerHTML = "Hide Video";
-                        audio.style.display = 'none';
-                        vShow.style.display = 'initial';
-                        player.src([{
-                            src: '/assets/streamOffline.mp4',
-                            type: 'video/mp4'
-                        }]);
-                        player.load();
-                        player.play();
-                        if (videoMuted === false){
-                            var vp = videojs('videoStream').player();
-                            var muted = vp.muted();
-
-                            vp.muted(videoMuted);
-                        }
-                    // if video is shown set it to be hidden
-                    // also show audio player
-                    } else {
-                        document.body.style.backgroundColor = "black";
-                        btnHideVideo.innerHTML = "Show Video";
-                        vShow.style.display = 'none';
-                        audio.style.display = 'block';
-                        player.pause();
-                        player.src({type: 'application/x-mpegURL', src: ''});
-
-                        // player.load();
-                    }
-
-                    if (audio.paused && videoMuted === false) {
-                        audio.play();
-                        }
-                    else {
-                        audio.pause();
-                    }
-                }),
-
-                $('#fullViewVideo').click(function () {
-                    var vFull = document.getElementsByClassName('vjs-tech');
-                    var btnFullViewVideo = document.getElementById('fullViewVideo');
-                    var videoStream = document.getElementById('videoStream');
-
-                    videoIsFullView = !videoIsFullView;
-
-                    if (videoIsFullView === false){
-                        btnFullViewVideo.innerHTML = "Fit Video";
-                        for (i = 0; i < vFull.length; i++) {
-                            vFull[i].style.objectFit = 'contain';
-                        }
-                    } else {
-                        btnFullViewVideo.innerHTML = "Full Video";
-                        for (i = 0; i < vFull.length; i++) {
-                            vFull[i].style.objectFit = 'cover';
-                        }
-                    };
-
-                    
-                }),
-
-                $('#hideButtons').click(function () {
-                    var btnShow = document.getElementById('showButtons');
-                    var btnHide = document.getElementById('hideButtons');
-                    var btnMute = document.getElementById('mute');
-                    var btnHideVideo = document.getElementById('hideVideo');
-                    var btnFullViewVideo = document.getElementById('fullViewVideo');
-                    var btnDiscord = document.getElementById('discord');
-                    var btnPastShows = document.getElementById('pastShows');
-
-                    buttonsHidden = !buttonsHidden;
-
-                    // hide all buttons except button hide button
-                    if (buttonsHidden === true) {
-                        btnShow.style.display = 'inline';
-                        btnHide.style.display = 'none';
-                        btnDiscord.style.display = 'none';
-                        btnPastShows.style.display = 'none';
-                        btnMute.style.display = 'none';
-                        btnHideVideo.style.display = 'none';
-                        btnFullViewVideo.style.display = 'none';
-                    // show all buttons
-                    } else {
-                        btnShow.style.display = 'none';
-                        btnHide.style.display = 'inline';
-                        btnDiscord.style.display = 'inline';
-                        btnPastShows.style.display = 'inline';
-                        btnMute.style.display = 'inline';
-                        btnHideVideo.style.display = 'inline';
-                        btnFullViewVideo.style.display = 'inline';
-                    }
-                }),
-
-                $('#showButtons').click(function () {
-                    var btnShow = document.getElementById('showButtons');
-                    var btnHide = document.getElementById('hideButtons');
-                    var btnMute = document.getElementById('mute');
-                    var btnHideVideo = document.getElementById('hideVideo');
-                    var btnFullViewVideo = document.getElementById('fullViewVideo');
-                    var btnDiscord = document.getElementById('discord');
-                    var btnPastShows = document.getElementById('pastShows');
-
-                    buttonsHidden = !buttonsHidden;
-
-                    // hide all buttons except button hide button
-                    if (buttonsHidden === true) {
-                        btnShow.style.display = 'inline';
-                        btnHide.style.display = 'none';
-                        btnDiscord.style.display = 'none';
-                        btnPastShows.style.display = 'none';
-                        btnMute.style.display = 'none';
-                        btnHideVideo.style.display = 'none';
-                        btnFullViewVideo.style.display = 'none';
-                    // show all buttons
-                    } else {
-                        btnShow.style.display = 'none';
-                        btnHide.style.display = 'inline';
-                        btnDiscord.style.display = 'inline';
-                        btnPastShows.style.display = 'inline';
-                        btnMute.style.display = 'inline';
-                        btnHideVideo.style.display = 'inline';
-                        btnFullViewVideo.style.display = 'inline';
-                    }
-                });
-            });
-        </script>
-
+      
+      <div class="main">
+      <section class="container">
+        <p style="text-align: center;">
+          <!--<img class="box" style="border: 0; width: 250px; height: 250px;" src="/assets/album2.png" seamless></img>-->
+          <iframe class="box" style="border: 0; width: 250px; height: 250px;" src="https://bandcamp.com/EmbeddedPlayer/album=1798409473/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless><a href="https://unaffiliatedfun.bandcamp.com/album/unaffiliated-2025-01-25">UNAFFILIATED​❌​️ - [ 2025.​01.​25 ] by UNAFFILIATED</a></iframe>
+          <iframe class="box" style="border: 0; width: 250px; height: 250px;" src="https://bandcamp.com/EmbeddedPlayer/album=1618864078/size=large/bgcol=ffffff/linkcol=63b2cc/minimal=true/transparent=true/" seamless><a href="https://unaffiliatedfun.bandcamp.com/album/unaffiliated-ix-2024-05-18">UNAFFILIATED​IX​️ - [ 2024​.​05​.​18 ] by UNAFFILIATED</a></iframe>
+          <iframe class="box" style="border: 0; width: 250px; height: 250px;" src="https://bandcamp.com/EmbeddedPlayer/album=3221335256/size=large/bgcol=ffffff/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="https://unaffiliatedfun.bandcamp.com/album/unaffiliated-20231021">UNAFFILIATED♾️ - [ 2023.10.21 ] by UNAFFILIATED</a></iframe>
+          <iframe class="box" style="border: 0; width: 250px; height: 250px;" src="https://bandcamp.com/EmbeddedPlayer/album=3791564258/size=large/bgcol=333333/linkcol=0f91ff/minimal=true/transparent=true/" seamless><a href="https://unaffiliatedfun.bandcamp.com/album/unaffiliated777-20230520">UNAFFILIATED777 - [ 2023.05.20 ] by UNAFFILIATED</a></iframe>
+          <iframe class="box" style="border: 0; width: 250px; height: 250px;" src="https://bandcamp.com/EmbeddedPlayer/album=4276503864/size=large/bgcol=ffffff/linkcol=de270f/minimal=true/transparent=true/" seamless><a href="https://unaffiliatedfun.bandcamp.com/album/unaffiliated666-10222022">UNAFFILIATED6.66 - [ 10.22.2022 ] by UNAFFILIATED</a></iframe>
+          <iframe class="box" style="border: 0; width: 250px; height: 250px;" src="https://bandcamp.com/EmbeddedPlayer/album=4186997770/size=large/bgcol=333333/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="https://unaffiliatedfun.bandcamp.com/album/unaffiliated5-20220521-thanks-4-two-years-2">UNAFFILIATED5 - [ 2022.05.21] THANKS 4 TWO YEARS!! by UNAFFILIATED</a></iframe>
+          <iframe class="box" style="border: 0; width: 250px; height: 250px;" src="https://bandcamp.com/EmbeddedPlayer/album=4229686826/size=large/bgcol=333333/linkcol=9a64ff/minimal=true/transparent=true/" seamless><a href="https://unaffiliatedfun.bandcamp.com/album/unaffiliated4-20211023">UNAFFILIATED4 - [ 2021.10.23 ] by UNAFFILIATED</a></iframe>
+          <iframe class="box" style="border: 0; width: 250px; height: 250px;" src="https://bandcamp.com/EmbeddedPlayer/album=1318410102/size=large/bgcol=333333/linkcol=e32c14/minimal=true/transparent=true/" seamless><a href="https://unaffiliatedfun.bandcamp.com/album/unaffiliated3-20210522">UNAFFILIATED3 - [ 2021.05.22 ] by UNAFFILIATED</a></iframe>    
+          <iframe class="box" style="border: 0; width: 250px; height: 250px;" src="https://bandcamp.com/EmbeddedPlayer/album=2864050540/size=large/bgcol=333333/linkcol=fe7eaf/minimal=true/transparent=true/" seamless><a href="https://unaffiliatedfun.bandcamp.com/album/unaffiliated2-20201024">UNAFFILIATED2 - [ 2020.10.24 ] by UNAFFILIATED</a></iframe>
+          <iframe class="box" style="border: 0; width: 250px; height: 250px;" src="https://bandcamp.com/EmbeddedPlayer/album=3367105500/size=large/bgcol=ffffff/linkcol=333333/minimal=true/transparent=true/" seamless><a href="https://unaffiliatedfun.bandcamp.com/album/unaffiliated1-20200520">UNAFFILIATED1 - [ 2020.05.20 ] by UNAFFILIATED</a></iframe>
+        </p>   
+      </section>
+      </div>
 
     </body>
 </html>
