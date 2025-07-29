@@ -1,4 +1,7 @@
+@import url(//fonts.googleapis.com/css2?family=Sarpanch:wght@900&display=swap);
+
 * {
+	font-family: 'Sarpanch', Verdana, sans-serif;
 	color: white;
 }
 
