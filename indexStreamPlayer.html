@@ -33,8 +33,13 @@
         <script type="text/javascript" charset="utf-8" src="https://vplatform.gvideo.co/_players/latest/gplayerAPI.min.js"></script>
 
         <script>  
-        window.onload = function() {  
-            let gplayerAPI = new GcorePlayer.gplayerAPI(document.getElementById('gplayer'));   
+            window.onload = function() {  
+                let gplayerAPI = new GcorePlayer.gplayerAPI(document.getElementById('gplayer'));
+                let flag = true;  
+                gplayerAPI.on('ready', () => {
+                    console.log('\[Event\]', 'ready')
+                    gplayerAPI.method({name: 'play'})
+                })
         }  
         </script>
 
