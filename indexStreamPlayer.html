@@ -34,13 +34,56 @@
 
         <script>  
             window.onload = function() {  
-                let gplayerAPI = new GcorePlayer.gplayerAPI(document.getElementById('gplayer'));
-                let flag = true;  
-                gplayerAPI.on('ready', () => {
-                    console.log('\[Event\]', 'ready')
-                    gplayerAPI.method({name: 'play'})
-                })
-        }  
+            let gplayerAPI = new GcorePlayer.gplayerAPI(document.getElementById('gplayer'));  
+            let flag = true;  
+            gplayerAPI.on('ready', () => {  
+            console.log('\[Event\]', 'ready')  
+            gplayerAPI.method({name: 'play'})  
+            })  
+            
+            gplayerAPI.on('play', () => {  
+            if(flag) {  
+            gplayerAPI.method({name: 'pause'})  
+            flag = false;  
+            }  
+            console.log('[Event]', 'play')  
+            })  
+            
+            gplayerAPI.on('pause', () => {  
+            console.log('[Event]', 'pause')  
+            })  
+            
+            gplayerAPI.on('volumeupdate', () => {  
+            console.log('[Event]', 'volumeupdate')  
+            })  
+            
+            gplayerAPI.on('timeupdate', () => {  
+            console.log('[Event]', 'timeupdate')  
+            })  
+            
+            gplayerAPI.on('stop', () => {  
+            console.log('[Event]', 'stop')  
+            })  
+            
+            gplayerAPI.on('seek', () => {  
+            console.log('[Event]', 'seek')  
+            })  
+            
+            gplayerAPI.on('resize', () => {  
+            console.log('[Event]', 'resize')  
+            })  
+            
+            gplayerAPI.on('fullscreen', () => {  
+            console.log('[Event]', 'fullscreen')  
+            })  
+            
+            gplayerAPI.on('error', () => {  
+            console.log('[Event]', 'error')  
+            })  
+            
+            gplayerAPI.on('ended', () => {  
+            console.log('[Event]', 'ended')  
+            }) }  
         </script>
 
         <div class="box">
@@ -112,7 +155,7 @@
                 }),
 
                 $('#hideVideo').click(function () {
-                    var vShow = document.getElementById('videoStream');
+                    var vShow = document.getElementById('gplayer');
                     var vShowSrc = document.getElementById('videoStreamSrc');
 
                     var audio = document.getElementById('audioStream');
@@ -128,7 +171,7 @@
                         btnHideVideo.innerHTML = "Hide Video";
                         audio.style.display = 'none';
                         vShow.style.display = 'initial';
-                        player.src([{
+                        vShow.src([{
                             //src: 'https://video.swagzone.win/hls/stream.m3u8',
                             src: 'https://37080.gvideo.io/cmaf/37080_2780979/master.m3u8',
                             type: 'application/x-mpegURL'
