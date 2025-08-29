@@ -9,68 +9,18 @@
         <!--css and favicon for UA-->
         <link href="/assets/favicon.ico" rel="icon" sizes="32x32">
         <link href="liveStyle.notmin.css" rel="stylesheet" />
-        <!--css and js for videojs-->
-        <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
-        <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
         <!--js for jquery-->
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"
 			  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
 			  crossorigin="anonymous">
 		</script>
-
-        <!--js for videojs quality selector-->
-        <script src="https://cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@4.1.0/dist/videojs-contrib-quality-levels.min.js"></script>
-        <!--css and js for videojs source selector-->
-        <script src="/scripts/videojs-http-source-selector.min.js"></script>
-        <link href="/scripts/videojs-http-source-selector.css" rel="stylesheet">
     
     </head>
 
     <body>
 
-        <video id="videoStream" class="video-js vjs-tech vjs-show-big-play-button-on-pause" controls preload="auto" autoplay loop muted="true">
-        </video>
-        <script type="text/javascript">
-            var overrideNative = true;
+        <iframe src="https://player.gvideo.co/streams/37080_2780979" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen id="gplayer"></iframe>
 
-            var player = videojs('videoStream', {
-                liveui: true,
-                html5: {
-                    vhs: {
-                        overrideNative: overrideNative
-                    },
-                    nativeVideoTracks: !overrideNative,
-                    nativeAudioTracks: !overrideNative,
-                    nativeTextTracks: !overrideNative,
-                    
-                    plugins: {
-                        httpSourceSelector:
-                            {
-                                default: 'auto'
-                            }
-                    }
-                }
-            });
-
-            // testing quality selector for videojs
-            player.qualityLevels();
-            player.httpSourceSelector();
-            //player.reloadSourceOnError();
-
-			player.src([{
-				//src: 'https://video.swagzone.win/hls/stream.m3u8',
-                src: 'https://37080.gvideo.io/cmaf/37080_2780979/master.m3u8',
-				type: 'application/x-mpegURL'
-			},
-            {
-                src: '/assets/streamoffline2025augDay1.mp4',
-				type: 'video/mp4'
-            }]);
-
-            player.play();
-
-        </script>
-        
         <div class="box">
             <div id="chatDiv" class="row content">
                 <iframe id="chat" height="100%" width="100%" frameborder="0"></iframe>
@@ -84,9 +34,7 @@
                     type="audio/ogg">
 				</audio>
 
-                <button id="mute" type="button">Unmute</button>
                 <button id="hideVideo" type="button">Hide Video</button>
-                <button id="fullViewVideo" type="button">Full Video</button>
                 <a href="https://discord.com/invite/pmbPxxeujy" target="_blank"><button id="discord" type="button">Discord Server</button></a>
                 <a href="https://unaffiliated.fun/indexPastShows.html" target="_blank"><button id="pastShows" type="button">Past Shows</button></a>
                 <button id="hideButtons" type="button">Hide Buttons</button>
@@ -99,46 +47,13 @@
             let videoIsHidden = false;
             // define global for button hide
             let buttonsHidden = false;
-            // define global for if video is muted
-            let videoMuted = true;
             // define global for video objectfit
             let videoIsFullView = true;
             
             $(document).ready(function () {
                 // mute function
-                $('#mute').click(function () {
-                    // invert mute global variable
-                    videoMuted = !videoMuted;
-                    var btnMute = document.getElementById('mute');
-                    
-                    // if video isn't hidden, act on video
-                    if (videoIsHidden === false){
-                        var vp = videojs('videoStream').player();
-                        var muted = vp.muted();
-
-                        vp.muted(videoMuted);
-                    // else, act on audio player
-                    } else {
-                        var audio = document.getElementById('audioStream');
-                        if (audio.paused){
-                            audio.play();
-                        } else {
-                            audio.pause();
-                        }
-                    }
-
-                    if (videoMuted === true) {
-                        btnMute.innerHTML = "Unmute";
-                        btnMute.style.backgroundColor = 'rgb(242, 3, 48)';
-                    }
-                    else {
-                        btnMute.innerHTML = "Mute";
-                        btnMute.style.backgroundColor = 'rgb(236, 24, 255)';
-                    }
-                }),
-
                 $('#hideVideo').click(function () {
-                    var vShow = document.getElementById('videoStream');
+                    var vShow = document.getElementById('gplayer');
                     var vShowSrc = document.getElementById('videoStreamSrc');
 
                     var audio = document.getElementById('audioStream');
@@ -154,7 +69,7 @@
                         btnHideVideo.innerHTML = "Hide Video";
                         audio.style.display = 'none';
                         vShow.style.display = 'initial';
-                        player.src([{
+                        vShow.src([{
                             //src: 'https://video.swagzone.win/hls/stream.m3u8',
                             src: 'https://37080.gvideo.io/cmaf/37080_2780979/master.m3u8',
                             type: 'application/x-mpegURL'
@@ -192,34 +107,11 @@
                     }
                 }),
 
-                $('#fullViewVideo').click(function () {
-                    var vFull = document.getElementsByClassName('vjs-tech');
-                    var btnFullViewVideo = document.getElementById('fullViewVideo');
-                    var videoStream = document.getElementById('videoStream');
-
-                    videoIsFullView = !videoIsFullView;
-
-                    if (videoIsFullView === false){
-                        btnFullViewVideo.innerHTML = "Fit Video";
-                        for (i = 0; i < vFull.length; i++) {
-                            vFull[i].style.objectFit = 'contain';
-                        }
-                    } else {
-                        btnFullViewVideo.innerHTML = "Full Video";
-                        for (i = 0; i < vFull.length; i++) {
-                            vFull[i].style.objectFit = 'cover';
-                        }
-                    };
-
-                    
-                }),
 
                 $('#hideButtons').click(function () {
                     var btnShow = document.getElementById('showButtons');
                     var btnHide = document.getElementById('hideButtons');
-                    var btnMute = document.getElementById('mute');
                     var btnHideVideo = document.getElementById('hideVideo');
-                    var btnFullViewVideo = document.getElementById('fullViewVideo');
                     var btnDiscord = document.getElementById('discord');
                     var btnPastShows = document.getElementById('pastShows');
 
@@ -231,27 +123,21 @@
                         btnHide.style.display = 'none';
                         btnDiscord.style.display = 'none';
                         btnPastShows.style.display = 'none';
-                        btnMute.style.display = 'none';
                         btnHideVideo.style.display = 'none';
-                        btnFullViewVideo.style.display = 'none';
                     // show all buttons
                     } else {
                         btnShow.style.display = 'none';
                         btnHide.style.display = 'inline';
                         btnDiscord.style.display = 'inline';
                         btnPastShows.style.display = 'inline';
-                        btnMute.style.display = 'inline';
                         btnHideVideo.style.display = 'inline';
-                        btnFullViewVideo.style.display = 'inline';
                     }
                 }),
 
                 $('#showButtons').click(function () {
                     var btnShow = document.getElementById('showButtons');
                     var btnHide = document.getElementById('hideButtons');
-                    var btnMute = document.getElementById('mute');
                     var btnHideVideo = document.getElementById('hideVideo');
-                    var btnFullViewVideo = document.getElementById('fullViewVideo');
                     var btnDiscord = document.getElementById('discord');
                     var btnPastShows = document.getElementById('pastShows');
 
@@ -263,18 +149,14 @@
                         btnHide.style.display = 'none';
                         btnDiscord.style.display = 'none';
                         btnPastShows.style.display = 'none';
-                        btnMute.style.display = 'none';
                         btnHideVideo.style.display = 'none';
-                        btnFullViewVideo.style.display = 'none';
                     // show all buttons
                     } else {
                         btnShow.style.display = 'none';
                         btnHide.style.display = 'inline';
                         btnDiscord.style.display = 'inline';
                         btnPastShows.style.display = 'inline';
-                        btnMute.style.display = 'inline';
                         btnHideVideo.style.display = 'inline';
-                        btnFullViewVideo.style.display = 'inline';
                     }
                 });
             });
