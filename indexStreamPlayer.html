@@ -30,6 +30,14 @@
 
         <iframe src="https://player.gvideo.co/streams/37080_2780979" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen id="gplayer"></iframe>
         
+        <script type="text/javascript" charset="utf-8" src="https://vplatform.gvideo.co/_players/latest/gplayerAPI.min.js"></script>
+
+        <script>  
+        window.onload = function() {  
+            let gplayerAPI = new GcorePlayer.gplayerAPI(document.getElementById('gplayer'));   
+        }  
+        </script>
+
         <div class="box">
             <div id="chatDiv" class="row content">
                 <iframe id="chat" height="100%" width="100%" frameborder="0"></iframe>
@@ -71,10 +79,13 @@
                     
                     // if video isn't hidden, act on video
                     if (videoIsHidden === false){
-                        var vp = videojs('videoStream').player();
-                        var muted = vp.muted();
+                        if (videoMuted === false){
+                            gplayerAPI.method({name: 'mute'})
+                        }
+                        if (videoMuted === true){
+                             gplayerAPI.method({name: 'unmute'})
+                        }
 
-                        vp.muted(videoMuted);
                     // else, act on audio player
                     } else {
                         var audio = document.getElementById('audioStream');
