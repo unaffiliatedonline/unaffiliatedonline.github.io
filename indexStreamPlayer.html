@@ -28,48 +28,7 @@
 
     <body>
 
-        <video id="videoStream" class="video-js vjs-tech vjs-show-big-play-button-on-pause" controls preload="auto" autoplay loop muted="true">
-        </video>
-        <script type="text/javascript">
-            var overrideNative = true;
-
-            var player = videojs('videoStream', {
-                liveui: true,
-                html5: {
-                    vhs: {
-                        overrideNative: overrideNative
-                    },
-                    nativeVideoTracks: !overrideNative,
-                    nativeAudioTracks: !overrideNative,
-                    nativeTextTracks: !overrideNative,
-                    
-                    plugins: {
-                        httpSourceSelector:
-                            {
-                                default: 'auto'
-                            }
-                    }
-                }
-            });
-
-            // testing quality selector for videojs
-            player.qualityLevels();
-            player.httpSourceSelector();
-            //player.reloadSourceOnError();
-
-			player.src([{
-				//src: 'https://video.swagzone.win/hls/stream.m3u8',
-                src: 'https://37080.gvideo.io/cmaf/37080_2780979/master.m3u8',
-				type: 'application/x-mpegURL'
-			},
-            {
-                src: '/assets/streamoffline2025augDay1.mp4',
-				type: 'video/mp4'
-            }]);
-
-            player.play();
-
-        </script>
+        <iframe width="100vx" height="100hx" src="https://player.gvideo.co/streams/37080_2780979" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         
         <div class="box">
             <div id="chatDiv" class="row content">
