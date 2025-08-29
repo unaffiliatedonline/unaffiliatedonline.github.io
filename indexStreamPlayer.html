@@ -149,26 +149,7 @@
                     else {
                         audio.pause();
                     }
-                }),
-
-                $('#fullViewVideo').click(function () {
-                    var vFull = document.getElementsByClassName('vjs-tech');
-                    var btnFullViewVideo = document.getElementById('fullViewVideo');
-                    var videoStream = document.getElementById('videoStream');
-
-                    videoIsFullView = !videoIsFullView;
-
-                    if (videoIsFullView === false){
-                        btnFullViewVideo.innerHTML = "Fit Video";
-                        for (i = 0; i < vFull.length; i++) {
-                            vFull[i].style.objectFit = 'contain';
-                        }
-                    } else {
-                        btnFullViewVideo.innerHTML = "Full Video";
-                        for (i = 0; i < vFull.length; i++) {
-                            vFull[i].style.objectFit = 'cover';
-                        }
-                    };
+                })
 
                     
                 }),
@@ -178,7 +159,6 @@
                     var btnHide = document.getElementById('hideButtons');
                     var btnMute = document.getElementById('mute');
                     var btnHideVideo = document.getElementById('hideVideo');
-                    var btnFullViewVideo = document.getElementById('fullViewVideo');
                     var btnDiscord = document.getElementById('discord');
                     var btnPastShows = document.getElementById('pastShows');
 
@@ -192,7 +172,6 @@
                         btnPastShows.style.display = 'none';
                         btnMute.style.display = 'none';
                         btnHideVideo.style.display = 'none';
-                        btnFullViewVideo.style.display = 'none';
                     // show all buttons
                     } else {
                         btnShow.style.display = 'none';
@@ -201,7 +180,6 @@
                         btnPastShows.style.display = 'inline';
                         btnMute.style.display = 'inline';
                         btnHideVideo.style.display = 'inline';
-                        btnFullViewVideo.style.display = 'inline';
                     }
                 }),
 
@@ -210,7 +188,6 @@
                     var btnHide = document.getElementById('hideButtons');
                     var btnMute = document.getElementById('mute');
                     var btnHideVideo = document.getElementById('hideVideo');
-                    var btnFullViewVideo = document.getElementById('fullViewVideo');
                     var btnDiscord = document.getElementById('discord');
                     var btnPastShows = document.getElementById('pastShows');
 
@@ -224,7 +201,6 @@
                         btnPastShows.style.display = 'none';
                         btnMute.style.display = 'none';
                         btnHideVideo.style.display = 'none';
-                        btnFullViewVideo.style.display = 'none';
                     // show all buttons
                     } else {
                         btnShow.style.display = 'none';
@@ -233,7 +209,6 @@
                         btnPastShows.style.display = 'inline';
                         btnMute.style.display = 'inline';
                         btnHideVideo.style.display = 'inline';
-                        btnFullViewVideo.style.display = 'inline';
                     }
                 });
             });
