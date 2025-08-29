@@ -28,7 +28,7 @@
 
     <body>
 
-        <iframe id="videoStream" src="https://player.gvideo.co/streams/37080_2780979" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe src="https://player.gvideo.co/streams/37080_2780979" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen id="gplayer"></iframe>
         
         <div class="box">
             <div id="chatDiv" class="row content">
@@ -150,8 +150,6 @@
                     }
                 }),
 
-                    
-                }),
 
                 $('#hideButtons').click(function () {
                     var btnShow = document.getElementById('showButtons');
