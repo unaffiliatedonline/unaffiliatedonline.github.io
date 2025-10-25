@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="UNAFFILIATED.FUN">
+        <meta name="keywords" content="internet radio, concert, gabber, hardcore, juke, nightcore, ambient, dance, bass, dnb" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>UNAFFILIATED.FUN</title>
+        <!--css and favicon for UA-->
+        <link href="/assets/favicon.ico" rel="icon" sizes="32x32">
+        <link href="liveStyle.notmin.css" rel="stylesheet" />
+        <!--js for jquery-->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+			  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+			  crossorigin="anonymous">
+		</script>
+    
+    </head>
+
+    <body>
+
+        <iframe src="https://player.gvideo.co/streams/37080_2780979" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen id="gplayer"></iframe>
+
+        <div class="box">
+            <div id="chatDiv" class="row content">
+                <iframe id="chat" height="100%" width="100%" frameborder="0"></iframe>
+            </div>
+
+            <div id="buttonBar" class="row footer">
+                <audio id="audioStream" preload="" controls>
+					<source src="https://audio.swagzone.win/unaffiliated.mp3"
+                    type="audio/mp3">
+                    <source src="https://audio.swagzone.win/unaffiliated.ogg"
+                    type="audio/ogg">
+				</audio>
+
+                <button id="hideVideo" type="button">Hide Video</button>
+                <a href="https://discord.com/invite/pmbPxxeujy" target="_blank"><button id="discord" type="button">Discord Server</button></a>
+                <a href="https://unaffiliated.fun/indexPastShows.html" target="_blank"><button id="pastShows" type="button">Past Shows</button></a>
+                <button id="hideButtons" type="button">Hide Buttons</button>
+                <button id="showButtons" type="button">+</button>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            // define global for hidden video
+            let videoIsHidden = false;
+            // define global for button hide
+            let buttonsHidden = false;
+            // define global for video objectfit
+            let videoIsFullView = true;
+            
+            $(document).ready(function () {
+                // mute function
+                $('#hideVideo').click(function () {
+                    var vShow = document.getElementById('gplayer');
+                    var vShowSrc = document.getElementById('videoStreamSrc');
+
+                    var audio = document.getElementById('audioStream');
+
+                    var btnHideVideo = document.getElementById('hideVideo');
+
+                    videoIsHidden = !videoIsHidden;
+
+                    // on buttonpress, if video is hidden set it to be shown
+                    // also hide audio player
+                    if (videoIsHidden === false) {
+                        document.body.style.backgroundColor = "";
+                        btnHideVideo.innerHTML = "Hide Video";
+                        audio.style.display = 'none';
+                        vShow.style.display = 'initial';
+                        vShow.src([{
+                            //src: 'https://video.swagzone.win/hls/stream.m3u8',
+                            src: 'https://37080.gvideo.io/cmaf/37080_2780979/master.m3u8',
+                            type: 'application/x-mpegURL'
+                        },
+                        {
+                            src: '/assets/streamoffline2025augDay2.mp4',
+                            type: 'video/mp4'
+                        }]);
+                        player.load();
+                        player.play();
+                        if (videoMuted === false){
+                            var vp = videojs('videoStream').player();
+                            var muted = vp.muted();
+
+                            vp.muted(videoMuted);
+                        }
+                    // if video is shown set it to be hidden
+                    // also show audio player
+                    } else {
+                        document.body.style.backgroundColor = "black";
+                        btnHideVideo.innerHTML = "Show Video";
+                        vShow.style.display = 'none';
+                        audio.style.display = 'block';
+                        player.pause();
+                        player.src({type: 'application/x-mpegURL', src: ''});
+
+                        // player.load();
+                    }
+
+                    if (audio.paused && videoMuted === false) {
+                        audio.play();
+                        }
+                    else {
+                        audio.pause();
+                    }
+                }),
+
+
+                $('#hideButtons').click(function () {
+                    var btnShow = document.getElementById('showButtons');
+                    var btnHide = document.getElementById('hideButtons');
+                    var btnHideVideo = document.getElementById('hideVideo');
+                    var btnDiscord = document.getElementById('discord');
+                    var btnPastShows = document.getElementById('pastShows');
+
+                    buttonsHidden = !buttonsHidden;
+
+                    // hide all buttons except button hide button
+                    if (buttonsHidden === true) {
+                        btnShow.style.display = 'inline';
+                        btnHide.style.display = 'none';
+                        btnDiscord.style.display = 'none';
+                        btnPastShows.style.display = 'none';
+                        btnHideVideo.style.display = 'none';
+                    // show all buttons
+                    } else {
+                        btnShow.style.display = 'none';
+                        btnHide.style.display = 'inline';
+                        btnDiscord.style.display = 'inline';
+                        btnPastShows.style.display = 'inline';
+                        btnHideVideo.style.display = 'inline';
+                    }
+                }),
+
+                $('#showButtons').click(function () {
+                    var btnShow = document.getElementById('showButtons');
+                    var btnHide = document.getElementById('hideButtons');
+                    var btnHideVideo = document.getElementById('hideVideo');
+                    var btnDiscord = document.getElementById('discord');
+                    var btnPastShows = document.getElementById('pastShows');
+
+                    buttonsHidden = !buttonsHidden;
+
+                    // hide all buttons except button hide button
+                    if (buttonsHidden === true) {
+                        btnShow.style.display = 'inline';
+                        btnHide.style.display = 'none';
+                        btnDiscord.style.display = 'none';
+                        btnPastShows.style.display = 'none';
+                        btnHideVideo.style.display = 'none';
+                    // show all buttons
+                    } else {
+                        btnShow.style.display = 'none';
+                        btnHide.style.display = 'inline';
+                        btnDiscord.style.display = 'inline';
+                        btnPastShows.style.display = 'inline';
+                        btnHideVideo.style.display = 'inline';
+                    }
+                });
+            });
+        </script>
+
+
+    </body>
+</html>
